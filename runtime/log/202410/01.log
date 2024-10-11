@@ -1,0 +1,639 @@
+---------------------------------------------------------------
+[ 2024-10-01T23:21:01+08:00 ] 192.144.204.37 GET www.changgongzhiyitiyu.com/api/place/cancel_order
+[运行时间：0.027302s] [吞吐率：36.63req/s] [内存消耗：3,983.34kb] [文件加载：142]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000010s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000831s ]
+[ info ] [ LANG ] /www/wwwroot/changgongzhiyitiyu.com/thinkphp/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @app_dispatch [ RunTime:0.000129s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'place',
+    2 => 'cancel_order',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept' => '*/*',
+  'host' => 'www.changgongzhiyitiyu.com',
+  'user-agent' => 'curl/7.29.0',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /www/wwwroot/changgongzhiyitiyu.com/public/../application/api/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.000818s ]
+[ info ] [ RUN ] app\api\controller\Place->cancel_order[ /www/wwwroot/changgongzhiyitiyu.com/application/api/controller/Place.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000487s ] mysql:host=127.0.0.1;port=3306;dbname=venue;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `yy_make_info` [ RunTime:0.000544s ]
+[ sql ] [ SQL ] SELECT `id` FROM `yy_make_info` WHERE  `make_times` <= 1727796061  AND `status` = 0 [ RunTime:0.003680s ]
+---------------------------------------------------------------
+[ 2024-10-01T23:24:02+08:00 ] 192.144.204.37 GET www.changgongzhiyitiyu.com/api/place/cancel_order
+[运行时间：0.026545s] [吞吐率：37.67req/s] [内存消耗：3,983.40kb] [文件加载：142]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000013s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000807s ]
+[ info ] [ LANG ] /www/wwwroot/changgongzhiyitiyu.com/thinkphp/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @app_dispatch [ RunTime:0.000109s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'place',
+    2 => 'cancel_order',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept' => '*/*',
+  'host' => 'www.changgongzhiyitiyu.com',
+  'user-agent' => 'curl/7.29.0',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /www/wwwroot/changgongzhiyitiyu.com/public/../application/api/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.000786s ]
+[ info ] [ RUN ] app\api\controller\Place->cancel_order[ /www/wwwroot/changgongzhiyitiyu.com/application/api/controller/Place.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000476s ] mysql:host=127.0.0.1;port=3306;dbname=venue;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `yy_make_info` [ RunTime:0.000514s ]
+[ sql ] [ SQL ] SELECT `id` FROM `yy_make_info` WHERE  `make_times` <= 1727796242  AND `status` = 0 [ RunTime:0.003145s ]
+---------------------------------------------------------------
+[ 2024-10-01T23:27:01+08:00 ] 192.144.204.37 GET www.changgongzhiyitiyu.com/api/place/cancel_order
+[运行时间：0.026640s] [吞吐率：37.54req/s] [内存消耗：3,983.40kb] [文件加载：142]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000012s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000780s ]
+[ info ] [ LANG ] /www/wwwroot/changgongzhiyitiyu.com/thinkphp/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @app_dispatch [ RunTime:0.000109s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'place',
+    2 => 'cancel_order',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept' => '*/*',
+  'host' => 'www.changgongzhiyitiyu.com',
+  'user-agent' => 'curl/7.29.0',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /www/wwwroot/changgongzhiyitiyu.com/public/../application/api/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.000783s ]
+[ info ] [ RUN ] app\api\controller\Place->cancel_order[ /www/wwwroot/changgongzhiyitiyu.com/application/api/controller/Place.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000623s ] mysql:host=127.0.0.1;port=3306;dbname=venue;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `yy_make_info` [ RunTime:0.000501s ]
+[ sql ] [ SQL ] SELECT `id` FROM `yy_make_info` WHERE  `make_times` <= 1727796421  AND `status` = 0 [ RunTime:0.003148s ]
+---------------------------------------------------------------
+[ 2024-10-01T23:29:18+08:00 ] 180.101.245.253 GET www.changgongzhiyitiyu.com/
+[运行时间：0.019864s] [吞吐率：50.34req/s] [内存消耗：3,279.60kb] [文件加载：142]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000013s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000895s ]
+[ info ] [ LANG ] /www/wwwroot/changgongzhiyitiyu.com/thinkphp/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @app_dispatch [ RunTime:0.000110s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'upgrade-insecure-requests' => '1',
+  'referer' => 'http://www.changgongzhiyitiyu.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone os 15_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Mobile/11D257 Safari/604.1',
+  'host' => 'www.changgongzhiyitiyu.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /www/wwwroot/changgongzhiyitiyu.com/public/../application/index/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.000864s ]
+[ info ] [ BEHAVIOR ] Run \addons\summernote\Summernote @config_init [ RunTime:0.000055s ]
+[ info ] [ LANG ] /www/wwwroot/changgongzhiyitiyu.com/public/../application/index/lang/zh-cn/index.php
+[ info ] [ RUN ] app\index\controller\Index->index[ /www/wwwroot/changgongzhiyitiyu.com/application/index/controller/Index.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2024-10-01T23:29:18+08:00 ] 180.101.245.253 GET www.changgongzhiyitiyu.com/tbRzHTvadC.php
+[运行时间：0.021094s] [吞吐率：47.41req/s] [内存消耗：3,313.42kb] [文件加载：142]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000012s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000782s ]
+[ info ] [ LANG ] /www/wwwroot/changgongzhiyitiyu.com/thinkphp/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @app_dispatch [ RunTime:0.000105s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'upgrade-insecure-requests' => '1',
+  'referer' => 'https://www.changgongzhiyitiyu.com/',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone os 15_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Mobile/11D257 Safari/604.1',
+  'host' => 'www.changgongzhiyitiyu.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /www/wwwroot/changgongzhiyitiyu.com/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.000813s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.000044s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2024-10-01T23:29:18+08:00 ] 180.101.245.253 GET www.changgongzhiyitiyu.com/tbRzHTvadC.php/index/login
+[运行时间：0.020656s] [吞吐率：48.41req/s] [内存消耗：3,685.30kb] [文件加载：146]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000010s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000739s ]
+[ info ] [ LANG ] /www/wwwroot/changgongzhiyitiyu.com/thinkphp/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @app_dispatch [ RunTime:0.000108s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'upgrade-insecure-requests' => '1',
+  'referer' => 'https://www.changgongzhiyitiyu.com/tbRzHTvadC.php',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone os 15_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Mobile/11D257 Safari/604.1',
+  'host' => 'www.changgongzhiyitiyu.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /www/wwwroot/changgongzhiyitiyu.com/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.000798s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \addons\summernote\Summernote @config_init [ RunTime:0.000051s ]
+[ info ] [ LANG ] /www/wwwroot/changgongzhiyitiyu.com/public/../application/admin/lang/zh-cn/index.php
+[ info ] [ RUN ] app\admin\controller\Index->login[ /www/wwwroot/changgongzhiyitiyu.com/application/admin/controller/Index.php ]
+[ info ] [ VIEW ] /www/wwwroot/changgongzhiyitiyu.com/public/../application/admin/view/index/login.html [ array (
+  0 => 'breadcrumb',
+  1 => 'site',
+  2 => 'config',
+  3 => 'auth',
+  4 => 'admin',
+  5 => 'background',
+  6 => 'title',
+) ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.000036s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2024-10-01T23:30:01+08:00 ] 192.144.204.37 GET www.changgongzhiyitiyu.com/api/place/cancel_order
+[运行时间：0.027298s] [吞吐率：36.63req/s] [内存消耗：3,983.40kb] [文件加载：142]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000013s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000804s ]
+[ info ] [ LANG ] /www/wwwroot/changgongzhiyitiyu.com/thinkphp/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @app_dispatch [ RunTime:0.000114s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'place',
+    2 => 'cancel_order',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept' => '*/*',
+  'host' => 'www.changgongzhiyitiyu.com',
+  'user-agent' => 'curl/7.29.0',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /www/wwwroot/changgongzhiyitiyu.com/public/../application/api/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.000809s ]
+[ info ] [ RUN ] app\api\controller\Place->cancel_order[ /www/wwwroot/changgongzhiyitiyu.com/application/api/controller/Place.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000499s ] mysql:host=127.0.0.1;port=3306;dbname=venue;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `yy_make_info` [ RunTime:0.000673s ]
+[ sql ] [ SQL ] SELECT `id` FROM `yy_make_info` WHERE  `make_times` <= 1727796601  AND `status` = 0 [ RunTime:0.003344s ]
+---------------------------------------------------------------
+[ 2024-10-01T23:33:01+08:00 ] 192.144.204.37 GET www.changgongzhiyitiyu.com/api/place/cancel_order
+[运行时间：0.026646s] [吞吐率：37.53req/s] [内存消耗：3,983.40kb] [文件加载：142]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000012s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000776s ]
+[ info ] [ LANG ] /www/wwwroot/changgongzhiyitiyu.com/thinkphp/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @app_dispatch [ RunTime:0.000109s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'place',
+    2 => 'cancel_order',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept' => '*/*',
+  'host' => 'www.changgongzhiyitiyu.com',
+  'user-agent' => 'curl/7.29.0',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /www/wwwroot/changgongzhiyitiyu.com/public/../application/api/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.000791s ]
+[ info ] [ RUN ] app\api\controller\Place->cancel_order[ /www/wwwroot/changgongzhiyitiyu.com/application/api/controller/Place.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000452s ] mysql:host=127.0.0.1;port=3306;dbname=venue;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `yy_make_info` [ RunTime:0.000541s ]
+[ sql ] [ SQL ] SELECT `id` FROM `yy_make_info` WHERE  `make_times` <= 1727796781  AND `status` = 0 [ RunTime:0.003166s ]
+---------------------------------------------------------------
+[ 2024-10-01T23:36:02+08:00 ] 192.144.204.37 GET www.changgongzhiyitiyu.com/api/place/cancel_order
+[运行时间：0.026964s] [吞吐率：37.09req/s] [内存消耗：3,983.40kb] [文件加载：142]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000025s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000782s ]
+[ info ] [ LANG ] /www/wwwroot/changgongzhiyitiyu.com/thinkphp/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @app_dispatch [ RunTime:0.000116s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'place',
+    2 => 'cancel_order',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept' => '*/*',
+  'host' => 'www.changgongzhiyitiyu.com',
+  'user-agent' => 'curl/7.29.0',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /www/wwwroot/changgongzhiyitiyu.com/public/../application/api/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.000806s ]
+[ info ] [ RUN ] app\api\controller\Place->cancel_order[ /www/wwwroot/changgongzhiyitiyu.com/application/api/controller/Place.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000433s ] mysql:host=127.0.0.1;port=3306;dbname=venue;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `yy_make_info` [ RunTime:0.000679s ]
+[ sql ] [ SQL ] SELECT `id` FROM `yy_make_info` WHERE  `make_times` <= 1727796962  AND `status` = 0 [ RunTime:0.003137s ]
+---------------------------------------------------------------
+[ 2024-10-01T23:39:01+08:00 ] 192.144.204.37 GET www.changgongzhiyitiyu.com/api/place/cancel_order
+[运行时间：0.025966s] [吞吐率：38.51req/s] [内存消耗：3,983.40kb] [文件加载：142]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000012s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000770s ]
+[ info ] [ LANG ] /www/wwwroot/changgongzhiyitiyu.com/thinkphp/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @app_dispatch [ RunTime:0.000105s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'place',
+    2 => 'cancel_order',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept' => '*/*',
+  'host' => 'www.changgongzhiyitiyu.com',
+  'user-agent' => 'curl/7.29.0',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /www/wwwroot/changgongzhiyitiyu.com/public/../application/api/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.000785s ]
+[ info ] [ RUN ] app\api\controller\Place->cancel_order[ /www/wwwroot/changgongzhiyitiyu.com/application/api/controller/Place.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000415s ] mysql:host=127.0.0.1;port=3306;dbname=venue;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `yy_make_info` [ RunTime:0.000510s ]
+[ sql ] [ SQL ] SELECT `id` FROM `yy_make_info` WHERE  `make_times` <= 1727797141  AND `status` = 0 [ RunTime:0.003151s ]
+---------------------------------------------------------------
+[ 2024-10-01T23:42:01+08:00 ] 192.144.204.37 GET www.changgongzhiyitiyu.com/api/place/cancel_order
+[运行时间：0.026071s] [吞吐率：38.36req/s] [内存消耗：3,983.40kb] [文件加载：142]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000011s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000763s ]
+[ info ] [ LANG ] /www/wwwroot/changgongzhiyitiyu.com/thinkphp/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @app_dispatch [ RunTime:0.000114s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'place',
+    2 => 'cancel_order',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept' => '*/*',
+  'host' => 'www.changgongzhiyitiyu.com',
+  'user-agent' => 'curl/7.29.0',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /www/wwwroot/changgongzhiyitiyu.com/public/../application/api/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.000803s ]
+[ info ] [ RUN ] app\api\controller\Place->cancel_order[ /www/wwwroot/changgongzhiyitiyu.com/application/api/controller/Place.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000362s ] mysql:host=127.0.0.1;port=3306;dbname=venue;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `yy_make_info` [ RunTime:0.000505s ]
+[ sql ] [ SQL ] SELECT `id` FROM `yy_make_info` WHERE  `make_times` <= 1727797321  AND `status` = 0 [ RunTime:0.003152s ]
+---------------------------------------------------------------
+[ 2024-10-01T23:45:01+08:00 ] 192.144.204.37 GET www.changgongzhiyitiyu.com/api/place/cancel_order
+[运行时间：0.026956s] [吞吐率：37.10req/s] [内存消耗：3,983.40kb] [文件加载：142]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000012s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000791s ]
+[ info ] [ LANG ] /www/wwwroot/changgongzhiyitiyu.com/thinkphp/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @app_dispatch [ RunTime:0.000110s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'place',
+    2 => 'cancel_order',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept' => '*/*',
+  'host' => 'www.changgongzhiyitiyu.com',
+  'user-agent' => 'curl/7.29.0',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /www/wwwroot/changgongzhiyitiyu.com/public/../application/api/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.000951s ]
+[ info ] [ RUN ] app\api\controller\Place->cancel_order[ /www/wwwroot/changgongzhiyitiyu.com/application/api/controller/Place.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000607s ] mysql:host=127.0.0.1;port=3306;dbname=venue;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `yy_make_info` [ RunTime:0.000537s ]
+[ sql ] [ SQL ] SELECT `id` FROM `yy_make_info` WHERE  `make_times` <= 1727797501  AND `status` = 0 [ RunTime:0.003181s ]
+---------------------------------------------------------------
+[ 2024-10-01T23:47:41+08:00 ] 4.151.37.161 GET 192.144.204.37/actuator/health
+[运行时间：0.014274s] [吞吐率：70.06req/s] [内存消耗：2,275.73kb] [文件加载：127]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000015s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000832s ]
+[ info ] [ LANG ] /www/wwwroot/changgongzhiyitiyu.com/thinkphp/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @app_dispatch [ RunTime:0.000116s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'actuator',
+    1 => 'health',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 zgrab/0.x',
+  'host' => '192.144.204.37',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2024-10-01T23:48:01+08:00 ] 192.144.204.37 GET www.changgongzhiyitiyu.com/api/place/cancel_order
+[运行时间：0.026491s] [吞吐率：37.75req/s] [内存消耗：3,983.40kb] [文件加载：142]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000013s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000766s ]
+[ info ] [ LANG ] /www/wwwroot/changgongzhiyitiyu.com/thinkphp/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @app_dispatch [ RunTime:0.000109s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'place',
+    2 => 'cancel_order',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept' => '*/*',
+  'host' => 'www.changgongzhiyitiyu.com',
+  'user-agent' => 'curl/7.29.0',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /www/wwwroot/changgongzhiyitiyu.com/public/../application/api/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.000903s ]
+[ info ] [ RUN ] app\api\controller\Place->cancel_order[ /www/wwwroot/changgongzhiyitiyu.com/application/api/controller/Place.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000545s ] mysql:host=127.0.0.1;port=3306;dbname=venue;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `yy_make_info` [ RunTime:0.000678s ]
+[ sql ] [ SQL ] SELECT `id` FROM `yy_make_info` WHERE  `make_times` <= 1727797681  AND `status` = 0 [ RunTime:0.003150s ]
+---------------------------------------------------------------
+[ 2024-10-01T23:48:16+08:00 ] 182.43.206.14 GET www.changgongzhiyitiyu.com/
+[运行时间：0.018723s] [吞吐率：53.41req/s] [内存消耗：3,276.88kb] [文件加载：142]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000011s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000784s ]
+[ info ] [ LANG ] /www/wwwroot/changgongzhiyitiyu.com/thinkphp/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @app_dispatch [ RunTime:0.000106s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36',
+  'host' => 'www.changgongzhiyitiyu.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /www/wwwroot/changgongzhiyitiyu.com/public/../application/index/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.000768s ]
+[ info ] [ BEHAVIOR ] Run \addons\summernote\Summernote @config_init [ RunTime:0.000050s ]
+[ info ] [ LANG ] /www/wwwroot/changgongzhiyitiyu.com/public/../application/index/lang/zh-cn/index.php
+[ info ] [ RUN ] app\index\controller\Index->index[ /www/wwwroot/changgongzhiyitiyu.com/application/index/controller/Index.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2024-10-01T23:51:01+08:00 ] 192.144.204.37 GET www.changgongzhiyitiyu.com/api/place/cancel_order
+[运行时间：0.026278s] [吞吐率：38.05req/s] [内存消耗：3,983.40kb] [文件加载：142]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000011s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000760s ]
+[ info ] [ LANG ] /www/wwwroot/changgongzhiyitiyu.com/thinkphp/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @app_dispatch [ RunTime:0.000107s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'place',
+    2 => 'cancel_order',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept' => '*/*',
+  'host' => 'www.changgongzhiyitiyu.com',
+  'user-agent' => 'curl/7.29.0',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /www/wwwroot/changgongzhiyitiyu.com/public/../application/api/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.000810s ]
+[ info ] [ RUN ] app\api\controller\Place->cancel_order[ /www/wwwroot/changgongzhiyitiyu.com/application/api/controller/Place.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000412s ] mysql:host=127.0.0.1;port=3306;dbname=venue;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `yy_make_info` [ RunTime:0.000529s ]
+[ sql ] [ SQL ] SELECT `id` FROM `yy_make_info` WHERE  `make_times` <= 1727797861  AND `status` = 0 [ RunTime:0.003185s ]
+---------------------------------------------------------------
+[ 2024-10-01T23:54:01+08:00 ] 192.144.204.37 GET www.changgongzhiyitiyu.com/api/place/cancel_order
+[运行时间：0.026125s] [吞吐率：38.28req/s] [内存消耗：3,983.40kb] [文件加载：142]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000010s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000763s ]
+[ info ] [ LANG ] /www/wwwroot/changgongzhiyitiyu.com/thinkphp/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @app_dispatch [ RunTime:0.000106s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'place',
+    2 => 'cancel_order',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept' => '*/*',
+  'host' => 'www.changgongzhiyitiyu.com',
+  'user-agent' => 'curl/7.29.0',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /www/wwwroot/changgongzhiyitiyu.com/public/../application/api/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.000788s ]
+[ info ] [ RUN ] app\api\controller\Place->cancel_order[ /www/wwwroot/changgongzhiyitiyu.com/application/api/controller/Place.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000403s ] mysql:host=127.0.0.1;port=3306;dbname=venue;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `yy_make_info` [ RunTime:0.000511s ]
+[ sql ] [ SQL ] SELECT `id` FROM `yy_make_info` WHERE  `make_times` <= 1727798041  AND `status` = 0 [ RunTime:0.003167s ]
+---------------------------------------------------------------
+[ 2024-10-01T23:57:01+08:00 ] 192.144.204.37 GET www.changgongzhiyitiyu.com/api/place/cancel_order
+[运行时间：0.026401s] [吞吐率：37.88req/s] [内存消耗：3,983.40kb] [文件加载：142]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000012s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000790s ]
+[ info ] [ LANG ] /www/wwwroot/changgongzhiyitiyu.com/thinkphp/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @app_dispatch [ RunTime:0.000107s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'place',
+    2 => 'cancel_order',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept' => '*/*',
+  'host' => 'www.changgongzhiyitiyu.com',
+  'user-agent' => 'curl/7.29.0',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /www/wwwroot/changgongzhiyitiyu.com/public/../application/api/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.000804s ]
+[ info ] [ RUN ] app\api\controller\Place->cancel_order[ /www/wwwroot/changgongzhiyitiyu.com/application/api/controller/Place.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000430s ] mysql:host=127.0.0.1;port=3306;dbname=venue;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `yy_make_info` [ RunTime:0.000534s ]
+[ sql ] [ SQL ] SELECT `id` FROM `yy_make_info` WHERE  `make_times` <= 1727798221  AND `status` = 0 [ RunTime:0.003164s ]

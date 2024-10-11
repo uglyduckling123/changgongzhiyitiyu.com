@@ -1,0 +1,26 @@
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('用户名称')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-nickname" disabled class="form-control"  name="row[nickname]" type="text" value="{$row.nickname}">
+        </div>
+    </div>
+    <div class="form-group" hidden>
+      <input id="c-id" class="form-control" step="" name="row[id]" type="number" value="{$row.id}">
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('充值金额')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-money" class="form-control" step="" name="row[money]" type="number" value="">
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed ">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+  </form>
+  

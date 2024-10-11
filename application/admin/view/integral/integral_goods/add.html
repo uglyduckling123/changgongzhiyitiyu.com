@@ -1,0 +1,58 @@
+<form id="add-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+    {:token()}
+    <input type="hidden" name="row[bank_id]" value="{$bank_id}">
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">商品名称:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-name" data-rule="required" class="form-control" name="row[name]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">优势:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-advantage" data-rule="required" class="form-control" name="row[advantage]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">起兑单位:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-since_unit" data-rule="required" class="form-control" name="row[since_unit]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">兑换次数:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-change_number" data-rule="required" class="form-control" name="row[change_number]" type="text" value="" >
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">积分价值:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-Integral_value" data-rule="required" class="form-control" name="row[integral_value]" type="text" value="" placeholder="单位：元/万">
+        </div>
+    </div>
+  
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('sort')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-weigh" data-rule="required" class="form-control" name="row[weigh]" type="number" value="0">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Status')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <select class="form-control" name="row[status]">
+                <option value="1">正常</option>
+                <option value="2">禁用</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-primary btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

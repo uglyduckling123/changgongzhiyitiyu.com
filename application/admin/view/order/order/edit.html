@@ -1,0 +1,45 @@
+<form id="add-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+    {:token()}
+  
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('是否分账')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <select class="form-control" name="row[is_fashionable]">
+                <option value="1"  {if $row['is_fashionable'] == 1}selected{/if}>是</option>
+                <option value="2" {if $row['is_fashionable'] == 2}selected{/if}>否</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Status')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <select class="form-control" name="row[status]">
+                <option value="1"  {if $row['status'] == 1}selected{/if}>完成</option>
+                <option value="2" {if $row['status'] == 2}selected{/if}>驳回</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">分账金额:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-fashionable_money"  class="form-control" {if $row['is_percent'] == 2}disabled{/if} name="row[fashionable_money]" type="number" value="{$row['fashionable_money']}">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">备注:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-remark"  class="form-control" rows="5" name="row[remark]" cols="50">{$row['remark']}</textarea>
+        </div>
+    </div>
+
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-primary btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>
