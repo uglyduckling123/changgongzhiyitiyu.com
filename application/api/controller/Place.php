@@ -459,7 +459,7 @@ class Place extends Api
             $solf = '20:00-20:30';
         } elseif ($kk == 28) {
             $solf = '20:30-21:00';
-        } elseif ($kk == 19) {
+        } elseif ($kk == 29) {
             $solf = '21:00-22:00';
         }
         return $solf;
@@ -606,7 +606,7 @@ class Place extends Api
         $make_info = Db::name('make_info')->where($map)->find();
         if ($make_info) {
 
-            if ($make_info['uid'] ==ser['id']) {
+            if ($make_info['uid'] ==$user['id']) {
                 $status = 2; //本人已预约
             } else {
                 $status = 1; //已预约
