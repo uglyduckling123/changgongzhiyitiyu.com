@@ -233,11 +233,11 @@ class Place extends Api
                 $real = 1;
             }else {
                 if($solf[0] >= $gold_one_time[0] && $solf[1] <= $gold_one_time[1]){
-                    $member_price = $room_info['one_first_price']/2;
-                    $wrong_memeber_price = $room_info['one_second_price']/2;
+                    $member_price = $room_info['one_first_price'];
+                    $wrong_memeber_price = $room_info['one_second_price'];
                 }else{
-                    $member_price = $room_info['weekday_one_price'];
-                    $wrong_memeber_price = $room_info['weekday_two_price'];
+                    $member_price = $room_info['weekday_one_price']/2;
+                    $wrong_memeber_price = $room_info['weekday_two_price']/2;
                 }
                 $real = 0;
             }
@@ -603,15 +603,26 @@ class Place extends Api
         $map['make_year'] = strtotime($date);
         $map['status'] = ['in', [0, 1]];
         $label_time = explode('-', $this->backTimeNew($label));
+        $new_label_time = strtotime($label_time[1]);
         $make_info = Db::name('make_info')->where($map)->find();
-        if ($make_info) {
-
-            if ($make_info['uid'] ==$user['id']) {
-                $status = 2; //本人已预约
-            } else {
+        //判断当天状态
+        if (strtotime($date) == strtotime(date('Y-m-d', time())) && (time() > $new_label_time)) {
+            $label_time_status = 1;
+        } else {
+            $label_time_status = 0;
+        }
+        if ($make_info || $label_time_status) {
+            if ($make_info) {
+                if ($make_info['uid'] ==$user['id']) {
+                    $status = 2; //本人已预约
+                } else {
+                    $status = 1; //已预约
+                }
+            }else{
                 $status = 1; //已预约
             }
-        } else {
+
+        }else {
             $status = 0; //未预约
         }
         return $status;
