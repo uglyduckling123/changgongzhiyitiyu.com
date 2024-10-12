@@ -143,7 +143,7 @@ class Place extends Api
             $user = $this->auth->getUser();
             if ($user['member_type'] != 2) {
                 if ($date_label > $room_info['make_day']) {
-                    $this->error('今天不在可预约时间范围内');
+                    $this->error('不在可预约时间范围内');
                 }
             }
             $arr = [];
@@ -233,8 +233,8 @@ class Place extends Api
                 $real = 1;
             }else {
                 if($solf[0] >= $gold_one_time[0] && $solf[1] <= $gold_one_time[1]){
-                    $member_price = $room_info['one_first_price'];
-                    $wrong_memeber_price = $room_info['one_second_price'];
+                    $member_price = $room_info['one_first_price']/1;
+                    $wrong_memeber_price = $room_info['one_second_price']/1;
                 }else{
                     $member_price = $room_info['weekday_one_price']/2;
                     $wrong_memeber_price = $room_info['weekday_two_price']/2;
@@ -713,6 +713,58 @@ class Place extends Api
                     $this->success('验证通过');
                 }else{
                     $this->success('验证通过'); 
+                }
+            }else{
+                $this->success('验证通过');
+            }
+        }
+        $this->error('请求方式错误');
+    }
+
+    /**
+     * 下单前验证
+     */
+    public function makePlaceBeforeNew()
+    {
+        if ($this->request->isPost()) {
+            $user = $this->auth->getUser();
+            $place_id = $this->request->post('place_id');
+            $make_year = strtotime($this->request->post('make_year'));
+            $real = $this->request->post('is_real/a');
+            $room = $this->request->post('room');
+            $date_label = $this->request->post('date_label');
+            if (empty($place_id))  $this->error('请选择预约场馆');
+            if (empty($make_year)) $this->error('请选择预约日期');
+            //查找该场所配置信息
+            $room_info = Db::name('place_room')->where(['place_id' => $place_id, 'id' => $room])->find();
+            if (!$room_info) $this->error('场所信息不存在');
+            //今天零点时间戳
+            $time = strtotime(date('Y-m-d', time()));
+            $new_slof = explode('-', $room_info['slof_time']);
+            $start_time = $time + ($new_slof[0] * 3600);
+            $end_time = $time + ($new_slof[1] * 3600);
+            //查找该场所配置信息
+            $room_info = Db::name('place_room')->where(['place_id' => $place_id, 'id' => $room])->find();
+            if (!$room_info) $this->error('场所信息不存在');
+            if (time() < ($time + 21600) && $user['member_type'] == 0) $this->error('暂未开放预约');
+            $real_sum = array_sum($real); //2 加数
+            //查询条件
+            $map['uid'] = $user['id'];
+            $map['place_id'] = $place_id;
+            //$map['make_year'] = $make_year;
+            $map['status'] = ['neq',2];
+            if($real_sum){
+              if($user['member_type'] != 3){
+                    if ($date_label > $room_info['make_day']) $this->error('公益时间段您只能预约今天和未来'.($room_info['make_day']-1).'天');
+                    if ($real_sum > 1) {
+                        $this->error('公益时间段您只能预约一个场次');
+                    } else {
+                        $map['money'] = 0;
+                        $tomorrow_make_count = Db::name('make_info')->where($map)->where('createtime', 'between time', [$time, $time + 86400])->count();
+                        if ($tomorrow_make_count) $this->error('公益时间段每天只能预约一个场地');
+                    }
+                }else{
+                    $this->success('验证通过');
                 }
             }else{
                 $this->success('验证通过');
