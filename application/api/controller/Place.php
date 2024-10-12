@@ -123,6 +123,56 @@ class Place extends Api
         }
         $this->error('请求方式错误');
     }
+    /**
+     * 循环出一个横向列表
+     * date 日期
+     */
+    public function siteListNew()
+    {
+        if ($this->request->isGet()) {
+            $date = $this->request->get('date');
+            $room = $this->request->get('room');
+            $date_label = $this->request->get('date_label');
+            $place_id = $this->request->get('place_id');
+            if (empty($date)) $this->error('请选择日期');
+            if (empty($room)) $this->error('请选择场地');
+            if (empty($place_id)) $this->error('请选择场馆');
+            //查找该场所配置信息
+            $room_info = Db::name('place_room')->where(['place_id' => $place_id, 'id' => $room])->find();
+            if (!$room_info) $this->error('场所信息不存在');
+            $user = $this->auth->getUser();
+            if ($user['member_type'] != 2) {
+                if ($date_label > $room_info['make_day']) {
+                    $this->error('今天不在可预约时间范围内');
+                }
+            }
+            $arr = [];
+            $label = [];
+            //查找场地数量
+            $seat  = Db::name('seat')->where(['place_id' => $place_id, 'room_id' => $room, 'status' => 0])->select();
+            for ($i = 1; $i <= 29; $i++) {
+                $label[$i] = [];
+            }
+            foreach ($seat as $k => $v) {
+                $arr[$k]['seat_id'] = $v['id'];
+                $arr[$k]['seat_name'] = $v['name'];
+                $arr[$k]['label'] = $label;
+            }
+            $user = $this->auth->getUser();
+            foreach ($arr as &$value) {
+                foreach ($value['label'] as $kk => $vv) {
+                    $value['label'][$kk]['status'] = $this->backStatusNew($user, $date, $place_id, $room, $value['seat_id'], $kk, $date_label);
+                    $value['label'][$kk]['time_solf'] = $this->backTimeNew($kk);
+                    $data = $this->backPriceNew($kk,$room_info,$date);
+                    $value['label'][$kk]['member_price'] = $data['member_price'];
+                    $value['label'][$kk]['wrong_member_price'] = $data['wrong_memeber_price'];
+                    $value['label'][$kk]['is_real'] = $data['is_real'];
+                }
+            }
+            $this->success('获取成功', $arr);
+        }
+        $this->error('请求方式错误');
+    }
     
     /**
      * 返回价格
@@ -157,6 +207,45 @@ class Place extends Api
            $member_price = $room_info['saturday_one_price'];
            $wrong_memeber_price = $room_info['saturday_two_price'];
            $real = 0;
+        }
+        $data['member_price'] = $member_price;
+        $data['wrong_memeber_price'] = $wrong_memeber_price;
+        $data['is_real'] = $real;
+        return $data;
+    }
+
+    /**
+     * 返回价格
+     */
+    public function backPriceNew($kk,$room_info,$date)
+    {
+        $solf = $this->backIntTimeNew($kk);
+        $new_slof = explode('-', $room_info['slof_time']); //公益时间段
+        $gold_one_time = explode('-',$room_info['gold_one_time']);//第一时间段
+        //判断价格 公益时间段价格  工作日(会员和非会员)价格  非工作日(会员和非会员)价格
+        $workday = ChinaHoliday::isWorkday($date);
+        //判断是不是工作日
+        if($workday){
+            if($solf[0] >= $new_slof[0] && $solf[1] <= $new_slof[1]){
+                //公益时间段价格
+                $member_price = 0;
+                $wrong_memeber_price = 0;
+                $real = 1;
+            }else {
+                if($solf[0] >= $gold_one_time[0] && $solf[1] <= $gold_one_time[1]){
+                    $member_price = $room_info['one_first_price']/2;
+                    $wrong_memeber_price = $room_info['one_second_price']/2;
+                }else{
+                    $member_price = $room_info['weekday_one_price'];
+                    $wrong_memeber_price = $room_info['weekday_two_price'];
+                }
+                $real = 0;
+            }
+        }else{
+            //节假日价格
+            $member_price = $room_info['saturday_one_price']/2;
+            $wrong_memeber_price = $room_info['saturday_two_price']/2;
+            $real = 0;
         }
         $data['member_price'] = $member_price;
         $data['wrong_memeber_price'] = $wrong_memeber_price;
@@ -202,6 +291,74 @@ class Place extends Api
         $new_solf = explode('-',$solf);
         return $new_solf;
     }
+
+    /**
+     * 返回处理数据用整数时间段
+     */
+    public function backIntTimeNew($kk)
+    {
+        if ($kk == 1) {
+            $solf = '7-8';
+        } elseif ($kk == 2) {
+            $solf = '7-8';
+        } elseif ($kk == 3) {
+            $solf = '8-9';
+        } elseif ($kk == 4) {
+            $solf = '8-9';
+        } elseif ($kk == 5) {
+            $solf = '9-10';
+        } elseif ($kk == 6) {
+            $solf = '9-10';
+        } elseif ($kk == 7) {
+            $solf = '10-11';
+        } elseif ($kk == 8) {
+            $solf = '10-11';
+        } elseif ($kk == 9) {
+            $solf = '11-12';
+        } elseif ($kk == 10) {
+            $solf = '11-12';
+        } elseif ($kk == 11) {
+            $solf = '12-13';
+        } elseif ($kk == 12) {
+            $solf = '12-13';
+        } elseif ($kk == 13) {
+            $solf = '13-14';
+        } elseif ($kk == 14) {
+            $solf = '13-14';
+        } elseif ($kk == 15) {
+            $solf = '14-15';
+        } elseif ($kk == 16) {
+            $solf = '14-15';
+        } elseif ($kk == 17) {
+            $solf = '15-16';
+        } elseif ($kk == 18) {
+            $solf = '15-16';
+        } elseif ($kk == 19) {
+            $solf = '16-17';
+        } elseif ($kk == 20) {
+            $solf = '16-17';
+        } elseif ($kk == 21) {
+            $solf = '17-18';
+        } elseif ($kk == 22) {
+            $solf = '17-18';
+        } elseif ($kk == 23) {
+            $solf = '18-19';
+        } elseif ($kk == 24) {
+            $solf = '18-19';
+        } elseif ($kk == 25) {
+            $solf = '19-20';
+        } elseif ($kk == 26) {
+            $solf = '19-20';
+        } elseif ($kk == 27) {
+            $solf = '20-21';
+        } elseif ($kk == 28) {
+            $solf = '20-21';
+        } elseif ($kk == 29) {
+            $solf = '21-22';
+        }
+        $new_solf = explode('-',$solf);
+        return $new_solf;
+    }
     
     /**
      * 返回时间段
@@ -237,6 +394,72 @@ class Place extends Api
         } elseif ($kk == 14) {
             $solf = '20:00-21:00';
         } elseif ($kk == 15) {
+            $solf = '21:00-22:00';
+        }
+        return $solf;
+    }
+    /**
+     * 返回时间段
+     */
+    public function backTimeNew($kk)
+    {
+        if ($kk == 1) {
+            $solf = '07:00-07:30';
+        } elseif ($kk == 2) {
+            $solf = '07:30-08:00';
+        } elseif ($kk == 3) {
+            $solf = '08:00-08:30';
+        } elseif ($kk == 4) {
+            $solf = '08:30-09:00';
+        } elseif ($kk == 5) {
+            $solf = '09:00-09:30';
+        } elseif ($kk == 6) {
+            $solf = '09:30-10:00';
+        } elseif ($kk == 7) {
+            $solf = '10:00-10:30';
+        } elseif ($kk == 8) {
+            $solf = '10:30-11:00';
+        } elseif ($kk == 9) {
+            $solf = '11:00-11:30';
+        } elseif ($kk == 10) {
+            $solf = '11:30-12:00';
+        } elseif ($kk == 11) {
+            $solf = '12:00-12:30';
+        } elseif ($kk == 12) {
+            $solf = '12:30-13:00';
+        } elseif ($kk == 13) {
+            $solf = '13:00-13:30';
+        } elseif ($kk == 14) {
+            $solf = '13:30-14:00';
+        } elseif ($kk == 15) {
+            $solf = '14:00-14:30';
+        } elseif ($kk == 16) {
+            $solf = '14:30-15:00';
+        } elseif ($kk == 17) {
+            $solf = '15:00-15:30';
+        } elseif ($kk == 18) {
+            $solf = '15:30-16:00';
+        } elseif ($kk == 19) {
+            $solf = '16:00-16:30';
+        } elseif ($kk == 20) {
+            $solf = '16:30-17:00';
+        } elseif ($kk == 21) {
+            $solf = '17:00-17:30';
+        } elseif ($kk == 22) {
+            $solf = '17:30-18:00';
+        } elseif ($kk == 23) {
+            $solf = '18:00-18:30';
+        } elseif ($kk == 24) {
+            $solf = '18:30-19:00';
+        } elseif ($kk == 25) {
+            $solf = '19:00-19:30';
+        } elseif ($kk == 26) {
+            $solf = '19:30-20:00';
+        } elseif ($kk == 27) {
+            $solf = '20:00-20:30';
+        } elseif ($kk == 28) {
+            $solf = '20:30-21:00';
+        } elseif ($kk == 19) {
             $solf = '21:00-22:00';
         }
         return $solf;
@@ -356,6 +579,38 @@ class Place extends Api
                 $status = 1; //已预约
             }
             // $status = 1; //已预约
+        } else {
+            $status = 0; //未预约
+        }
+        return $status;
+    }
+
+    /**
+     * 返回预约状态
+     * date 要预约的时间
+     * place_id 网球馆id
+     * room 室内室外
+     * seat 第几场
+     * label 几点钟 标签时间段 数字
+     *
+     */
+    private function backStatusNew($user, $date, $place_id, $room, $seat, $label, $date_label)
+    {
+        $map['place_id'] = $place_id;
+        $map['room'] = $room;
+        $map['seat'] = $seat;
+        $map['label'] = $label;
+        $map['make_year'] = strtotime($date);
+        $map['status'] = ['in', [0, 1]];
+        $label_time = explode('-', $this->backTimeNew($label));
+        $make_info = Db::name('make_info')->where($map)->find();
+        if ($make_info) {
+
+            if ($make_info['uid'] ==ser['id']) {
+                $status = 2; //本人已预约
+            } else {
+                $status = 1; //已预约
+            }
         } else {
             $status = 0; //未预约
         }
