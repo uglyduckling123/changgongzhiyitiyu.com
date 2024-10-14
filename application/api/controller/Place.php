@@ -140,12 +140,7 @@ class Place extends Api
             //查找该场所配置信息
             $room_info = Db::name('place_room')->where(['place_id' => $place_id, 'id' => $room])->find();
             if (!$room_info) $this->error('场所信息不存在');
-            $user = $this->auth->getUser();
-            if ($user['member_type'] != 2) {
-                if ($date_label > $room_info['make_day']) {
-                    $this->error('不在可预约时间范围内');
-                }
-            }
+            //$user = $this->auth->getUser();
             $arr = [];
             $label = [];
             //查找场地数量
@@ -159,6 +154,15 @@ class Place extends Api
                 $arr[$k]['label'] = $label;
             }
             $user = $this->auth->getUser();
+            if($user['member_type']!=2){
+                $time = time();
+                $nextSunday = strtotime('next Sunday', $time); // 获取下周日的时间戳
+                $nextSundayMidnight = strtotime('midnight', $nextSunday);
+                $orderDate = strtotime($date);
+                if($orderDate>$nextSundayMidnight){
+                    $this->error('不在可预约时间范围内');
+                }
+            }
             foreach ($arr as &$value) {
                 foreach ($value['label'] as $kk => $vv) {
                     $value['label'][$kk]['status'] = $this->backStatusNew($user, $date, $place_id, $room, $value['seat_id'], $kk, $date_label);
@@ -748,13 +752,23 @@ class Place extends Api
             if (!$room_info) $this->error('场所信息不存在');
             if (time() < ($time + 21600) && $user['member_type'] == 0) $this->error('暂未开放预约');
             $real_sum = array_sum($real); //2 加数
+
+            if($user['member_type']!=2){
+                $time = time();
+                $nextSunday = strtotime('next Sunday', $time); // 获取下周日的时间戳
+                $nextSundayMidnight = strtotime('midnight', $nextSunday);
+                $orderDate = strtotime($make_year);
+                if($orderDate>$nextSundayMidnight){
+                    $this->error('不在可预约时间范围内');
+                }
+            }
             //查询条件
             $map['uid'] = $user['id'];
             $map['place_id'] = $place_id;
             //$map['make_year'] = $make_year;
             $map['status'] = ['neq',2];
             if($real_sum){
-              if($user['member_type'] != 3){
+              if($user['member_type'] != 2){
                     if ($date_label > $room_info['make_day']) $this->error('公益时间段您只能预约今天和未来'.($room_info['make_day']-1).'天');
                     if ($real_sum > 1) {
                         $this->error('公益时间段您只能预约一个场次');
