@@ -55,7 +55,7 @@ class Info extends Backend
             list($where, $sort, $order, $offset, $limit) = $this->buildparams();
 
             $list = $this->model
-                    ->with(['user','place','seat','room'])
+                    ->with(['user','place','seat','room','make_user_info'])
                     ->where($where)
                     ->order($sort, $order)
                     ->paginate($limit);
@@ -70,6 +70,8 @@ class Info extends Backend
 				$row->getRelation('seat')->visible(['name']);
 				$row->visible(['room']);
 				$row->getRelation('room')->visible(['name']);
+                $row->visible(['make_user_info']);
+                $row->getRelation('make_user_info')->visible(['user_name','mobile','identification','address']);
             }
 
             $result = array("total" => $list->total(), "rows" => $list->items());

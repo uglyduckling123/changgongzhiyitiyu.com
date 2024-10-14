@@ -745,14 +745,11 @@ class Place extends Api
             //今天零点时间戳
             $time = strtotime(date('Y-m-d', time()));
             $new_slof = explode('-', $room_info['slof_time']);
-            $start_time = $time + ($new_slof[0] * 3600);
-            $end_time = $time + ($new_slof[1] * 3600);
             //查找该场所配置信息
             $room_info = Db::name('place_room')->where(['place_id' => $place_id, 'id' => $room])->find();
             if (!$room_info) $this->error('场所信息不存在');
-            if (time() < ($time + 21600) && $user['member_type'] == 0) $this->error('暂未开放预约');
+            //if (time() < ($time + 21600) && $user['member_type'] == 0) $this->error('暂未开放预约');
             $real_sum = array_sum($real); //2 加数
-
             if($user['member_type']!=2){
                 $time = time();
                 $nextSunday = strtotime('next Sunday', $time); // 获取下周日的时间戳
@@ -987,10 +984,19 @@ class Place extends Api
                 if($make_user_info){
                     foreach ($make_user_info as $k => $v) {
                     $arrs[$k]['make_id'] = $vv;
-                    $arrs[$k]['name'] = $v['name'];
+                    if(isset($v['name'])){
+                        $arr[$k]['name'] = $v['name'];
+                    }
+                    if(isset($v['user_name'])){
+                        $arr[$k]['name'] = $v['user_name'];
+                    }
+                    //$arrs[$k]['name'] = $v['name'];
                     $arrs[$k]['mobile'] = $v['mobile'];
                     $arrs[$k]['address'] = $v['address'];
-                    $arrs[$k]['number'] = $v['number'];
+                    $arr[$k]['identification'] = isset($v['identification'])?$v['identification']:"";
+                    if(isset($v['number'])){
+                        $arr[$k]['number'] = $v['number'];
+                    }
                     $arrs[$k]['createtime'] = time();
                 }
                 Db::name('make_user_info')->insertAll($arrs); 

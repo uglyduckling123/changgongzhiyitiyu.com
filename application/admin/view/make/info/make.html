@@ -15,6 +15,7 @@
                             <th>姓名</th>
                             <th>手机</th>
                             <th>住址</th>
+                               <th>身份证号</th>
                         </tr>
                         {foreach name="list" id="arr"}
                         <tr>
@@ -22,6 +23,7 @@
                             <td>{$arr.name}</td>
                             <td>{$arr.mobile}</td>
                             <td>{$arr.address}</td>
+                            <td>{$arr.identification}</td>
                         </tr>
                         {/foreach}
                     </table>
