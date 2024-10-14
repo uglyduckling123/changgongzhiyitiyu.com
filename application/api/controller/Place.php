@@ -800,6 +800,7 @@ class Place extends Api
             $make_user_info = $this->request->post('make_user_info/a');
             $make_data = $this->request->post('make_data/a');
             $is_show = $this->request->post('is_show');
+            $make_place_new = $this->request->post('make_place_new',false);
             
             $is_pay = $this->request->post('is_pay');
             if (empty($money)) $this->error('请输入金额');
@@ -811,13 +812,13 @@ class Place extends Api
             //选择场次数量
             $make_count = count($make_data);
             if($is_show && $is_pay){
-               $this->only_pay($make_user_info,$make_data,$user,$place_id,$make_year,$new_slof,$room,$money,$type,$make_count,$order_num);
+               $this->only_pay($make_user_info,$make_data,$user,$place_id,$make_year,$new_slof,$room,$money,$type,$make_count,$order_num,$make_place_new);
             }elseif($is_show){
-                $this->only_make_info($make_user_info,$place_id,$make_data,$user,$order_num,$make_year,$new_slof,$room,$money);
+                $this->only_make_info($make_user_info,$place_id,$make_data,$user,$order_num,$make_year,$new_slof,$room,$money,$make_place_new);
             }elseif($is_pay){
-                $this->only_pay($make_user_info,$make_data,$user,$place_id,$make_year,$new_slof,$room,$money,$type,$make_count,$order_num);
+                $this->only_pay($make_user_info,$make_data,$user,$place_id,$make_year,$new_slof,$room,$money,$type,$make_count,$order_num,$make_place_new);
             }else{
-                $this->only_make_info($make_user_info,$place_id,$make_data,$user,$order_num,$make_year,$new_slof,$room,$money);
+                $this->only_make_info($make_user_info,$place_id,$make_data,$user,$order_num,$make_year,$new_slof,$room,$money,$make_place_new);
             }
         }
         $this->error('请求方式错误');
@@ -826,7 +827,7 @@ class Place extends Api
     /**
      * 单独提交信息
      */
-    public function only_make_info($make_user_info,$place_id,$make_data,$user,$order_num,$make_year,$new_slof,$room,$money)
+    public function only_make_info($make_user_info,$place_id,$make_data,$user,$order_num,$make_year,$new_slof,$room,$money,$make_place_new)
     {
         $user_type = $this->request->post('user_type',0);
         $is_gongyi = $this->request->post('is_gongyi',0);
@@ -854,7 +855,11 @@ class Place extends Api
             $data[$key]['make_year'] = $make_year;
             // $data[$key]['make_times'] = $make_year + ($new_slof[0] * 3600); //判断二级会员用
              //判断二级会员用
-            $slof = $this->backIntTime($value['label']);
+            if($make_place_new){
+                $slof = $this->backIntTimeNew($value['label']);
+            }else{
+                $slof = $this->backIntTime($value['label']);
+            }
             $data[$key]['make_times'] = $make_year + ($slof[0] * 3600);
             $data[$key]['make_time'] = $value['make_time'];
             $data[$key]['label'] = $value['label'];
@@ -914,7 +919,7 @@ class Place extends Api
     /**
      * 单独付钱
      */
-    public function only_pay($make_user_info,$make_data,$user,$place_id,$make_year,$new_slof,$room,$money,$type,$make_count,$order_num)
+    public function only_pay($make_user_info,$make_data,$user,$place_id,$make_year,$new_slof,$room,$money,$type,$make_count,$order_num,$make_place_new)
     {
         // halt($make_user_info);
         $user_type = $this->request->post('user_type',0);
@@ -928,7 +933,11 @@ class Place extends Api
             $arr[$key]['make_year'] = $make_year;
             // $arr[$key]['make_times'] = $make_year + ($new_slof[0] * 3600);
              //判断二级会员用
-            $slof = $this->backIntTime($value['label']);
+            if($make_place_new){
+                $slof = $this->backIntTimeNew($value['label']);
+            }else{
+                $slof = $this->backIntTime($value['label']);
+            }
             $arr[$key]['make_times'] = $make_year + ($slof[0] * 3600); 
             $arr[$key]['make_time'] = $value['make_time'];
             $arr[$key]['label'] = $value['label'];
