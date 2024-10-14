@@ -610,7 +610,7 @@ class Place extends Api
         $new_label_time = strtotime($label_time[1]);
         $make_info = Db::name('make_info')->where($map)->find();
         //判断当天状态
-        if (strtotime($date) == strtotime(date('Y-m-d', time())) && (time() > $new_label_time)) {
+        if (time()>$map['make_year']||(strtotime($date) == strtotime(date('Y-m-d', time())) && (time() > $new_label_time))) {
             $label_time_status = 1;
         } else {
             $label_time_status = 0;
@@ -766,7 +766,7 @@ class Place extends Api
             $map['status'] = ['neq',2];
             if($real_sum){
               if($user['member_type'] != 2){
-                    if ($date_label > $room_info['make_day']) $this->error('公益时间段您只能预约今天和未来'.($room_info['make_day']-1).'天');
+                    //if ($date_label > $room_info['make_day']) $this->error('公益时间段您只能预约今天和未来'.($room_info['make_day']-1).'天');
                     if ($real_sum > 1) {
                         $this->error('公益时间段您只能预约一个场次');
                     } else {
