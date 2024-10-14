@@ -145,7 +145,7 @@ class Place extends Api
             $label = [];
             //查找场地数量
             $seat  = Db::name('seat')->where(['place_id' => $place_id, 'room_id' => $room, 'status' => 0])->select();
-            for ($i = 1; $i <= 29; $i++) {
+            for ($i = 1; $i <= 27; $i++) {
                 $label[$i] = [];
             }
             foreach ($seat as $k => $v) {
@@ -302,62 +302,58 @@ class Place extends Api
     public function backIntTimeNew($kk)
     {
         if ($kk == 1) {
-            $solf = '7-8';
+            $solf = '8-9';
         } elseif ($kk == 2) {
-            $solf = '7-8';
+            $solf = '8-9';
         } elseif ($kk == 3) {
-            $solf = '8-9';
+            $solf = '9-10';
         } elseif ($kk == 4) {
-            $solf = '8-9';
+            $solf = '9-10';
         } elseif ($kk == 5) {
-            $solf = '9-10';
+            $solf = '10-11';
         } elseif ($kk == 6) {
-            $solf = '9-10';
+            $solf = '10-11';
         } elseif ($kk == 7) {
-            $solf = '10-11';
+            $solf = '11-12';
         } elseif ($kk == 8) {
-            $solf = '10-11';
+            $solf = '11-12';
         } elseif ($kk == 9) {
-            $solf = '11-12';
+            $solf = '12-13';
         } elseif ($kk == 10) {
-            $solf = '11-12';
+            $solf = '12-13';
         } elseif ($kk == 11) {
-            $solf = '12-13';
+            $solf = '13-14';
         } elseif ($kk == 12) {
-            $solf = '12-13';
+            $solf = '13-14';
         } elseif ($kk == 13) {
-            $solf = '13-14';
+            $solf = '14-15';
         } elseif ($kk == 14) {
-            $solf = '13-14';
+            $solf = '14-15';
         } elseif ($kk == 15) {
-            $solf = '14-15';
+            $solf = '15-16';
         } elseif ($kk == 16) {
-            $solf = '14-15';
+            $solf = '15-16';
         } elseif ($kk == 17) {
-            $solf = '15-16';
+            $solf = '16-17';
         } elseif ($kk == 18) {
-            $solf = '15-16';
+            $solf = '16-17';
         } elseif ($kk == 19) {
-            $solf = '16-17';
+            $solf = '17-18';
         } elseif ($kk == 20) {
-            $solf = '16-17';
+            $solf = '17-18';
         } elseif ($kk == 21) {
-            $solf = '17-18';
+            $solf = '18-19';
         } elseif ($kk == 22) {
-            $solf = '17-18';
+            $solf = '18-19';
         } elseif ($kk == 23) {
-            $solf = '18-19';
+            $solf = '19-20';
         } elseif ($kk == 24) {
-            $solf = '18-19';
+            $solf = '19-20';
         } elseif ($kk == 25) {
-            $solf = '19-20';
+            $solf = '20-21';
         } elseif ($kk == 26) {
-            $solf = '19-20';
+            $solf = '20-21';
         } elseif ($kk == 27) {
-            $solf = '20-21';
-        } elseif ($kk == 28) {
-            $solf = '20-21';
-        } elseif ($kk == 29) {
             $solf = '21-22';
         }
         $new_solf = explode('-',$solf);
@@ -408,62 +404,58 @@ class Place extends Api
     public function backTimeNew($kk)
     {
         if ($kk == 1) {
-            $solf = '07:00-07:30';
-        } elseif ($kk == 2) {
-            $solf = '07:30-08:00';
-        } elseif ($kk == 3) {
             $solf = '08:00-08:30';
-        } elseif ($kk == 4) {
+        } elseif ($kk == 2) {
             $solf = '08:30-09:00';
-        } elseif ($kk == 5) {
+        } elseif ($kk == 3) {
             $solf = '09:00-09:30';
-        } elseif ($kk == 6) {
+        } elseif ($kk == 4) {
             $solf = '09:30-10:00';
-        } elseif ($kk == 7) {
+        } elseif ($kk == 5) {
             $solf = '10:00-10:30';
-        } elseif ($kk == 8) {
+        } elseif ($kk == 6) {
             $solf = '10:30-11:00';
-        } elseif ($kk == 9) {
+        } elseif ($kk == 7) {
             $solf = '11:00-11:30';
-        } elseif ($kk == 10) {
+        } elseif ($kk == 8) {
             $solf = '11:30-12:00';
-        } elseif ($kk == 11) {
+        } elseif ($kk == 9) {
             $solf = '12:00-12:30';
-        } elseif ($kk == 12) {
+        } elseif ($kk == 10) {
             $solf = '12:30-13:00';
-        } elseif ($kk == 13) {
+        } elseif ($kk == 11) {
             $solf = '13:00-13:30';
-        } elseif ($kk == 14) {
+        } elseif ($kk == 12) {
             $solf = '13:30-14:00';
-        } elseif ($kk == 15) {
+        } elseif ($kk == 13) {
             $solf = '14:00-14:30';
-        } elseif ($kk == 16) {
+        } elseif ($kk == 14) {
             $solf = '14:30-15:00';
-        } elseif ($kk == 17) {
+        } elseif ($kk == 15) {
             $solf = '15:00-15:30';
-        } elseif ($kk == 18) {
+        } elseif ($kk == 16) {
             $solf = '15:30-16:00';
-        } elseif ($kk == 19) {
+        } elseif ($kk == 17) {
             $solf = '16:00-16:30';
-        } elseif ($kk == 20) {
+        } elseif ($kk == 18) {
             $solf = '16:30-17:00';
-        } elseif ($kk == 21) {
+        } elseif ($kk == 19) {
             $solf = '17:00-17:30';
-        } elseif ($kk == 22) {
+        } elseif ($kk == 20) {
             $solf = '17:30-18:00';
-        } elseif ($kk == 23) {
+        } elseif ($kk == 21) {
             $solf = '18:00-18:30';
-        } elseif ($kk == 24) {
+        } elseif ($kk == 22) {
             $solf = '18:30-19:00';
-        } elseif ($kk == 25) {
+        } elseif ($kk == 23) {
             $solf = '19:00-19:30';
-        } elseif ($kk == 26) {
+        } elseif ($kk == 24) {
             $solf = '19:30-20:00';
-        } elseif ($kk == 27) {
+        } elseif ($kk == 25) {
             $solf = '20:00-20:30';
-        } elseif ($kk == 28) {
+        } elseif ($kk == 26) {
             $solf = '20:30-21:00';
-        } elseif ($kk == 29) {
+        } elseif ($kk == 27) {
             $solf = '21:00-22:00';
         }
         return $solf;
@@ -751,8 +743,7 @@ class Place extends Api
             //if (time() < ($time + 21600) && $user['member_type'] == 0) $this->error('暂未开放预约');
             $real_sum = array_sum($real); //2 加数
             if($user['member_type']!=2){
-                $time = time();
-                $nextSunday = strtotime('next Sunday', $time); // 获取下周日的时间戳
+                $nextSunday = strtotime('next Sunday', time()); // 获取下周日的时间戳
                 $nextSundayMidnight = strtotime('midnight', $nextSunday);
                 $orderDate = strtotime($make_year);
                 if($orderDate>$nextSundayMidnight){
@@ -773,7 +764,9 @@ class Place extends Api
                         $map['money'] = 0;
                         $tomorrow_make_count = Db::name('make_info')->where($map)->where('createtime', 'between time', [$time, $time + 86400])->count();
                         if ($tomorrow_make_count) $this->error('公益时间段每天只能预约一个场地');
+                        $this->success('验证通过');
                     }
+
                 }else{
                     $this->success('验证通过');
                 }
@@ -842,10 +835,13 @@ class Place extends Api
         if (empty($make_user_info)) $this->error('请输入预约人信息');
             //判断信息是否有重复
             foreach ($make_user_info as $k => $v) {
-                $makeUserInfo = Db::name('make_user_info')->where(
-                    ['make_id' => $place_id, 'name' => $v['name'], 'mobile' => $v['mobile'], 'address' => $v['address']]
-                )->find();
-                if ($makeUserInfo) $this->error('部分预约人信息已存在');
+                if(!isset($v['user_name'])){
+                    $makeUserInfo = Db::name('make_user_info')->where(
+                        ['make_id' => $place_id, 'name' => $v['name'], 'mobile' => $v['mobile'], 'address' => $v['address']]
+                    )->find();
+                    if ($makeUserInfo) $this->error('部分预约人信息已存在');
+                }
+
             }
         }
         //定义空数组
