@@ -894,10 +894,19 @@ class Place extends Api
                  if($make_user_info){
                      foreach ($make_user_info as $k => $v) {
                             $arr[$k]['make_id'] = $vv;
-                            $arr[$k]['name'] = $v['name'];
+                            if(isset($v['name'])){
+                                $arr[$k]['name'] = $v['name'];
+                            }
+                            if(isset($v['user_name'])){
+                                 $arr[$k]['name'] = $v['user_name'];
+                            }
+                            //$arr[$k]['name'] = isset($v['user_name'])?$v['user_name']:"";
                             $arr[$k]['mobile'] = $v['mobile'];
                             $arr[$k]['address'] = $v['address'];
-                            $arr[$k]['number'] = $v['number'];
+                            $arr[$k]['identification'] = isset($v['identification'])?$v['identification']:"";
+                            if(isset($v['number'])){
+                                $arr[$k]['number'] = $v['number'];
+                            }
                             $arr[$k]['createtime'] = time();
                         }
                 Db::name('make_user_info')->insertAll($arr);
