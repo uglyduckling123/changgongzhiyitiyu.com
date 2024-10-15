@@ -456,6 +456,69 @@ class Place extends Api
         } elseif ($kk == 26) {
             $solf = '20:30-21:00';
         } elseif ($kk == 27) {
+            $solf = '21:00-21:30';
+        }
+        return $solf;
+    }
+
+    /**
+     * 返回时间段
+     */
+    public function backTimeNewJianRong($kk)
+    {
+        if ($kk == 1) {
+            $solf = '08:00-09:00';
+        } elseif ($kk == 2) {
+            $solf = '08:00-09:00';
+        } elseif ($kk == 3) {
+            $solf = '09:00-10:00';
+        } elseif ($kk == 4) {
+            $solf = '09:00-10:00';
+        } elseif ($kk == 5) {
+            $solf = '10:00-11:00';
+        } elseif ($kk == 6) {
+            $solf = '10:00-11:00';
+        } elseif ($kk == 7) {
+            $solf = '11:00-12:00';
+        } elseif ($kk == 8) {
+            $solf = '11:00-12:00';
+        } elseif ($kk == 9) {
+            $solf = '12:00-13:00';
+        } elseif ($kk == 10) {
+            $solf = '12:00-13:00';
+        } elseif ($kk == 11) {
+            $solf = '13:00-14:00';
+        } elseif ($kk == 12) {
+            $solf = '13:00-14:00';
+        } elseif ($kk == 13) {
+            $solf = '14:00-15:00';
+        } elseif ($kk == 14) {
+            $solf = '14:00-15:00';
+        } elseif ($kk == 15) {
+            $solf = '15:00-16:00';
+        } elseif ($kk == 16) {
+            $solf = '15:00-16:00';
+        } elseif ($kk == 17) {
+            $solf = '16:00-17:00';
+        } elseif ($kk == 18) {
+            $solf = '16:00-17:00';
+        } elseif ($kk == 19) {
+            $solf = '17:00-18:00';
+        } elseif ($kk == 20) {
+            $solf = '17:00-18:00';
+        } elseif ($kk == 21) {
+            $solf = '18:00-19:00';
+        } elseif ($kk == 22) {
+            $solf = '18:00-19:00';
+        } elseif ($kk == 23) {
+            $solf = '19:00-20:00';
+        } elseif ($kk == 24) {
+            $solf = '19:00-20:00';
+        } elseif ($kk == 25) {
+            $solf = '20:00-21:00';
+        } elseif ($kk == 26) {
+            $solf = '20:00-21:00';
+        } elseif ($kk == 27) {
             $solf = '21:00-22:00';
         }
         return $solf;
@@ -602,7 +665,7 @@ class Place extends Api
         $new_label_time = strtotime($label_time[1]);
         $make_info = Db::name('make_info')->where($map)->find();
         //判断当天状态
-        if (time()>$map['make_year']||(strtotime($date) == strtotime(date('Y-m-d', time())) && (time() > $new_label_time))) {
+        if (time()>$map['make_year']+3600*24||(strtotime($date) == strtotime(date('Y-m-d', time())) && (time() > $new_label_time))) {
             $label_time_status = 1;
         } else {
             $label_time_status = 0;
@@ -619,6 +682,22 @@ class Place extends Api
             }
 
         }else {
+            //兼容老数据
+            $oldMap['place_id'] = $place_id;
+            $oldMap['room'] = $room;
+            $oldMap['seat'] = $seat;
+            $oldMap['make_year'] = strtotime($date);
+            $oldMap['status'] = ['in', [0, 1]];
+            $makeTime = $this->backTimeNewJianRong($label);
+            $oldMap['make_time'] = $makeTime;
+            $oldMakeInfo = Db::name('make_info')->where($map)->find();
+            if($oldMakeInfo){
+                if ($oldMakeInfo['uid'] ==$user['id']) {
+                    $status = 2; //本人已预约
+                } else {
+                    $status = 1; //已预约
+                }
+            }
             $status = 0; //未预约
         }
         return $status;
