@@ -1070,17 +1070,17 @@ class Place extends Api
                     foreach ($make_user_info as $k => $v) {
                     $arrs[$k]['make_id'] = $vv;
                     if(isset($v['name'])){
-                        $arr[$k]['name'] = $v['name'];
+                        $arrs[$k]['name'] = $v['name'];
                     }
                     if(isset($v['user_name'])){
-                        $arr[$k]['name'] = $v['user_name'];
+                        $arrs[$k]['name'] = $v['user_name'];
                     }
                     //$arrs[$k]['name'] = $v['name'];
                     $arrs[$k]['mobile'] = $v['mobile'];
                     $arrs[$k]['address'] = $v['address'];
-                    $arr[$k]['identification'] = isset($v['identification'])?$v['identification']:"";
+                    $arrs[$k]['identification'] = isset($v['identification'])?$v['identification']:"";
                     if(isset($v['number'])){
-                        $arr[$k]['number'] = $v['number'];
+                        $arrs[$k]['number'] = $v['number'];
                     }
                     $arrs[$k]['createtime'] = time();
                 }
