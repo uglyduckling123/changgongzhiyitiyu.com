@@ -690,13 +690,14 @@ class Place extends Api
             $oldMap['status'] = ['in', [0, 1]];
             $makeTime = $this->backTimeNewJianRong($label);
             $oldMap['make_time'] = $makeTime;
-            $oldMakeInfo = Db::name('make_info')->where($map)->find();
+            $oldMakeInfo = Db::name('make_info')->where($oldMap)->find();
             if($oldMakeInfo){
                 if ($oldMakeInfo['uid'] ==$user['id']) {
                     $status = 2; //本人已预约
                 } else {
                     $status = 1; //已预约
                 }
+                return $status;
             }
             $status = 0; //未预约
         }
@@ -1122,7 +1123,9 @@ class Place extends Api
                     $arrs[$k]['name'] = $v['name'];
                     $arrs[$k]['mobile'] = $v['mobile'];
                     $arrs[$k]['address'] = $v['address'];
-                    $arrs[$k]['number'] = $v['number'];
+                    if(isset($v['number'])){
+                        $arrs[$k]['number'] = $v['number'];
+                    }
                     $arrs[$k]['createtime'] = time();
             }
                 Db::name('make_user_info')->insertAll($arrs);

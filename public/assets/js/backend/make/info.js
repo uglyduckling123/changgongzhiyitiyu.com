@@ -26,6 +26,10 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                     [
                         {checkbox: true},
                         {field: 'user.nickname', title: __('用户昵称'), operate: 'LIKE'},
+                        {field: 'makeuserinfo.name', title: __('用户姓名')},
+                        {field: 'makeuserinfo.mobile', title: __('手机号')},
+                        {field: 'makeuserinfo.address', title: __('社区')},
+                        {field: 'makeuserinfo.identification', title: __('身份证号')},
                         {field: 'code', title: __('Code'), operate: 'LIKE'},
                         {field: 'place.name', title: __('Place.name'), operate: 'LIKE'},
                         {field: 'make_year', title: __('Make_year'),operate:'RANGE', addclass:'datetimerange', autocomplete:false, formatter: Table.api.formatter.datetime,datetimeFormat: "YYYY-MM-DD"},

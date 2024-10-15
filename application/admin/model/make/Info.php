@@ -118,7 +118,7 @@ class Info extends Model
     {
         return $this->belongsTo('app\admin\model\Room', 'room', 'id', [], 'LEFT')->setEagerlyType(0);
     }
-    public function make_user_info()
+    public function makeuserinfo()
     {
         return $this->belongsTo('app\admin\model\MakeUserInfo', 'id', 'make_id', [], 'LEFT')->setEagerlyType(0);
     }
