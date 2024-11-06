@@ -839,14 +839,12 @@ class Place extends Api
               if($user['member_type'] != 2){
                     //if ($date_label > $room_info['make_day']) $this->error('公益时间段您只能预约今天和未来'.($room_info['make_day']-1).'天');
                     if ($real_sum > 2) {
-                        $this->error('公益时间段您只能预约两个场次');
+                        $this->error('公益时间段每天只能预约两个场次');
                     }
                     $map['money'] = 0;
                     $tomorrow_make_count = Db::name('make_info')->where($map)->where('createtime', 'between time', [$time, $time + 86400])->count();
-                    if ($tomorrow_make_count>=2) $this->error('公益时间段每天只能预约两个场地');
+                    if ($tomorrow_make_count>=2||($tomorrow_make_count+$real_sum)>2) $this->error('公益时间段每天只能预约两个场地');
                     $this->success('验证通过');
-
-
                 }else{
                     $this->success('验证通过');
                 }
