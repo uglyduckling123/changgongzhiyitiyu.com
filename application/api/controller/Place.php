@@ -823,7 +823,7 @@ class Place extends Api
             //if (time() < ($time + 21600) && $user['member_type'] == 0) $this->error('暂未开放预约');
             $real_sum = array_sum($real); //2 加数
             if($user['member_type']!=2){
-                $nextSunday = strtotime('next Sunday', time()); // 获取下周日的时间戳
+                $nextSunday = strtotime('next Monday', time());
                 $nextSundayMidnight = strtotime('midnight', $nextSunday);
                 $orderDate = strtotime($make_year);
                 if($orderDate>$nextSundayMidnight){
@@ -838,14 +838,14 @@ class Place extends Api
             if($real_sum){
               if($user['member_type'] != 2){
                     //if ($date_label > $room_info['make_day']) $this->error('公益时间段您只能预约今天和未来'.($room_info['make_day']-1).'天');
-                    if ($real_sum > 1) {
-                        $this->error('公益时间段您只能预约一个场次');
-                    }else{
-                        $map['money'] = 0;
-                        $tomorrow_make_count = Db::name('make_info')->where($map)->where('createtime', 'between time', [$time, $time + 86400])->count();
-                        if ($tomorrow_make_count) $this->error('公益时间段每天只能预约一个场地');
-                        $this->success('验证通过');
+                    if ($real_sum > 2) {
+                        $this->error('公益时间段您只能预约两个场次');
                     }
+                    $map['money'] = 0;
+                    $tomorrow_make_count = Db::name('make_info')->where($map)->where('createtime', 'between time', [$time, $time + 86400])->count();
+                    if ($tomorrow_make_count>=2) $this->error('公益时间段每天只能预约两个场地');
+                    $this->success('验证通过');
+
 
                 }else{
                     $this->success('验证通过');
@@ -1129,7 +1129,7 @@ class Place extends Api
                     //$arrs[$k]['name'] = $v['name'];
                     $arrs[$k]['mobile'] = $v['mobile'];
                     $arrs[$k]['address'] = $v['address'];
-                    $arr[$k]['identification'] = isset($v['identification'])?$v['identification']:"";
+                    $arrs[$k]['identification'] = isset($v['identification'])?$v['identification']:"";
                     if(isset($v['number'])){
                         $arrs[$k]['number'] = $v['number'];
                     }
