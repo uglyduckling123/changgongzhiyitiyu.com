@@ -823,10 +823,10 @@ class Place extends Api
             //if (time() < ($time + 21600) && $user['member_type'] == 0) $this->error('暂未开放预约');
             $real_sum = array_sum($real); //2 加数
             if($user['member_type']!=2){
-                $nextSunday = strtotime('next Monday', time());
+                $nextSunday = strtotime('next Sunday', time());
                 $nextSundayMidnight = strtotime('midnight', $nextSunday);
                 $orderDate = strtotime($make_year);
-                if($orderDate>$nextSundayMidnight){
+                if($make_year>$nextSundayMidnight){
                     $this->error('不在可预约时间范围内');
                 }
             }
